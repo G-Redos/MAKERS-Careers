@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    unauthorized: "You are not a member of a Makers Academy team."
+  login_button: "Login with GitHub"

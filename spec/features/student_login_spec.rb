@@ -1,0 +1,57 @@
+require "rails_helper"
+
+RSpec.feature "Student Login" do
+
+  context "Not logged in" do
+
+    let(:student) { FactoryGirl.build(:student) }
+    let(:github_api_url) { "https://api.github.com/orgs/makersacademy/members/#{student.github_username}" }
+
+    before(:each) do
+      mock_omniauth_login(student)
+      stub_request(:get, github_api_url).to_return(:status => 204)
+    end
+
+    scenario "I log in and I've already registered" do
+      student.save
+      login
+      expect(current_path).to eq(jobs_path)
+      expect(page).to have_content(student.name)
+    end
+
+    scenario "I log in and I haven't yet registered" do
+      login
+      expect(current_path).to eq(jobs_path)
+      expect(page).to have_content(student.name)
+    end
+
+    context "When the student is not a Makers Academy job hunter" do
+      before do
+        stub_request(:get, github_api_url).to_return(:status => 404)
+      end
+
+      scenario "I am not allowed to log in" do
+        login
+        expect(current_path).to eq(root_path)
+        expect(page).to have_content(I18n.t(:'errors.unauthorized'))
+      end
+    end
+  end
+
+  context "Logged in" do
+
+    before do
+      login_as(FactoryGirl.create(:student))
+    end
+
+    scenario "I am redirected to the jobs page" do
+      visit root_path
+      expect(current_path).to eq(jobs_path)
+    end
+  end
+
+  def login
+    visit root_path
+    click_on I18n.t(:login_button)
+  end
+end
