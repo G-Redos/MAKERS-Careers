@@ -1,0 +1,15 @@
+%nav.top-bar{"data-topbar" => "", :role => "navigation"}
+  %ul.title-area
+    %li.name
+      %h1= link_to "Makers Careers", "/"
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+  %section.top-bar-section
+    / Right Nav Section
+    - if user_signed_in?
+      %ul.right
+        %li.has-dropdown
+          %a{:href => "#"}= current_user.name
+          %ul.dropdown
+            %li= link_to('Logout', sign_out_path, :method => :delete)

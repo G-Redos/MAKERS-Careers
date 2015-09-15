@@ -18,28 +18,40 @@ RSpec.describe AuthenticateFromGithub do
   end
 
   it "authenticates and registers a student" do
-    stub_github(true)
-    stub_db
-    expect(service.call).to eq(:student)
+    stub_organization_check(true)
+    stub_admin_check(false)
+    stub_db("Student")
+    expect(service.call).to eq("Student")
+  end
+
+  it "authenticates and registers an admin" do
+    stub_organization_check(true)
+    stub_admin_check(true)
+    stub_db("Admin")
+    expect(service.call).to eq("Admin")
   end
 
   context "when not a Makers Academy jobseeker" do
 
     it "doesn't authenticate" do
-      stub_github(false)
+      stub_organization_check(false)
       expect { service.call }.to raise_error(AuthenticateFromGithub::NotAuthorizedError)
     end
   end
 
-  def stub_github(return_value)
+  def stub_organization_check(return_value)
     allow(client).to receive(:organization_member?).and_return(return_value)
   end
 
-  def stub_db
+  def stub_admin_check(return_value)
+    allow(client).to receive(:team_member?).and_return(return_value)
+  end
+
+  def stub_db(user_type)
     query = double(:query)
-    student = class_spy("Student").as_stubbed_const
-    allow(student).to receive(:where).with(provider: auth.provider, uid: auth.uid).and_return(query)
-    allow(query).to receive(:first_or_create).with(student_args).and_return(:student)
+    user = class_spy(user_type).as_stubbed_const
+    allow(user).to receive(:where).with(provider: auth.provider, uid: auth.uid).and_return(query)
+    allow(query).to receive(:first_or_create).with(student_args).and_return(user_type)
   end
 
   class AuthFake

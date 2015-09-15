@@ -40,9 +40,6 @@ gem 'dotenv'
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
-  gem 'webmock'
 
   gem 'rack-livereload'
 
@@ -52,10 +49,16 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'factory_girl_rails'
 
   gem 'dotenv-rails'
   gem 'awesome_print'
   gem 'gist'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'webmock'
 end
 

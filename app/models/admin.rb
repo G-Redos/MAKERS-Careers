@@ -1,3 +1,3 @@
-class Student < ActiveRecord::Base
+class Admin < ActiveRecord::Base
   devise :rememberable, :trackable
 end

@@ -1,0 +1,12 @@
+defaults: &defaults
+  organization: "makersacademy"
+  staff_team_id: 423105
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

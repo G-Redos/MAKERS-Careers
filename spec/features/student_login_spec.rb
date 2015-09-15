@@ -5,11 +5,14 @@ RSpec.feature "Student Login" do
   context "Not logged in" do
 
     let(:student) { FactoryGirl.build(:student) }
-    let(:github_api_url) { "https://api.github.com/orgs/makersacademy/members/#{student.github_username}" }
+    let(:github_members_url) { "https://api.github.com/orgs/makersacademy/members/#{student.github_username}" }
+    let(:github_team_id) { Rails.configuration.x.github["staff_team_id"] }
+    let(:github_admin_url) { "https://api.github.com/teams/#{github_team_id}/members/#{student.github_username}" }
 
     before(:each) do
       mock_omniauth_login(student)
-      stub_request(:get, github_api_url).to_return(:status => 204)
+      stub_request(:get, github_members_url).to_return(:status => 204)
+      stub_request(:get, github_admin_url).to_return(:status => 404)
     end
 
     scenario "I log in and I've already registered" do
@@ -25,9 +28,15 @@ RSpec.feature "Student Login" do
       expect(page).to have_content(student.name)
     end
 
+    scenario "I fail to log in with GitHub" do
+      OmniAuth.config.mock_auth[:github] = :invalid_credentials
+      login
+      expect(page).to have_content("Invalid credentials")
+    end
+
     context "When the student is not a Makers Academy job hunter" do
       before do
-        stub_request(:get, github_api_url).to_return(:status => 404)
+        stub_request(:get, github_members_url).to_return(:status => 404)
       end
 
       scenario "I am not allowed to log in" do
@@ -41,7 +50,7 @@ RSpec.feature "Student Login" do
   context "Logged in" do
 
     before do
-      login_as(FactoryGirl.create(:student))
+      login_as(FactoryGirl.create(:student), scope: :student)
     end
 
     scenario "I am redirected to the jobs page" do

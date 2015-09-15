@@ -1,9 +1,9 @@
 -if flash[:alert]
-  = t(flash[:alert])
+  = flash[:alert]
 .row.vholder
   .small-4.small-centered.columns.valign
     .panel
       %h2.text-center Careers
       %ul.text-center
-        %li= link_to t(:login_button), student_omniauth_authorize_path(:github)
+        %li= link_to t(:login_button), "auth/github"
 
