@@ -12,4 +12,4 @@
         %li.has-dropdown
           %a{:href => "#"}= current_user.name
           %ul.dropdown
-            %li= link_to('Logout', sign_out_path, :method => :delete)
+            %li= link_to(t(:logout_button), sign_out_path, :method => :delete)

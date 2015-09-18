@@ -14,21 +14,21 @@ RSpec.feature "Admin Login" do
       stub_request(:get, github_admin_url).to_return(:status => 204)
     end
 
-    scenario "I log in and I've already registered" do
+    scenario "I can log in when I've already registered" do
       admin.save
       login
       expect(current_path).to eq(jobs_path)
       expect(page).to have_content(admin.name)
     end
 
-    scenario "I log in and I haven't yet registered" do
+    scenario "I can log in when I haven't yet registered" do
       login
       expect(current_path).to eq(jobs_path)
       expect(page).to have_content(admin.name)
     end
   end
 
-  context "Logged in" do
+  context "Logged in as admin" do
 
     before do
       login_as(FactoryGirl.create(:admin), scope: :admin)
