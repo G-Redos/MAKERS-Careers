@@ -31,7 +31,7 @@ RSpec.feature "Admin Login" do
   context "Logged in as admin" do
 
     before do
-      login_as(FactoryGirl.create(:admin), scope: :admin)
+      login_as_admin
     end
 
     scenario "I am redirected to the jobs page" do

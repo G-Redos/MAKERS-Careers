@@ -39,6 +39,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include OmniauthHelper
+  config.include LoginHelpers
 
   config.before :suite do
     Warden.test_mode!

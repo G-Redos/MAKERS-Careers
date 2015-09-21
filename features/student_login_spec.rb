@@ -50,7 +50,7 @@ RSpec.feature "Student Login" do
   context "Logged in" do
 
     before do
-      login_as(FactoryGirl.create(:student), scope: :student)
+      login_as_student
     end
 
     scenario "I am redirected to the jobs page" do

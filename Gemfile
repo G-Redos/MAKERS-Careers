@@ -53,6 +53,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'awesome_print'
   gem 'gist'
+  gem 'ffaker'
 end
 
 group :test do
