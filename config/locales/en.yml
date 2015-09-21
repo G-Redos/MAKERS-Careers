@@ -23,3 +23,4 @@ en:
   errors:
     unauthorized: "You are not a member of a Makers Academy team."
   login_button: "Login with GitHub"
+  logout_button: "Logout"

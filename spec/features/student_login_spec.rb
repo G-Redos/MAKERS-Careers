@@ -15,14 +15,14 @@ RSpec.feature "Student Login" do
       stub_request(:get, github_admin_url).to_return(:status => 404)
     end
 
-    scenario "I log in and I've already registered" do
+    scenario "I can log in when I've already registered" do
       student.save
       login
       expect(current_path).to eq(jobs_path)
       expect(page).to have_content(student.name)
     end
 
-    scenario "I log in and I haven't yet registered" do
+    scenario "I can log in when I haven't yet registered" do
       login
       expect(current_path).to eq(jobs_path)
       expect(page).to have_content(student.name)
@@ -56,6 +56,12 @@ RSpec.feature "Student Login" do
     scenario "I am redirected to the jobs page" do
       visit root_path
       expect(current_path).to eq(jobs_path)
+    end
+
+    scenario "I signout" do
+      visit jobs_path
+      click_on I18n.t(:logout_button)
+      expect(page).to have_content(I18n.t(:"devise.sessions.signed_out"))
     end
   end
 
