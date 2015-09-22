@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
-  get "/jobs" => "jobs#index"
+  resources :jobs, only: :index do
+    post :apply
+  end
 end
