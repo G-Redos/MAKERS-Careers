@@ -24,3 +24,9 @@ en:
     unauthorized: "You are not a member of a Makers Academy team."
   login_button: "Login with GitHub"
   logout_button: "Logout"
+  jobs:
+    name_header: "Name"
+    description_header: "Description"
+    roles_header: "Open Roles"
+    apply_button: "Apply"
+    student_interested: "Interested"

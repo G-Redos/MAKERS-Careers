@@ -1,12 +1,18 @@
 %table
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Open Roles
+      %th= t(:'jobs.name_header')
+      %th= t(:'jobs.description_header')
+      %th= t(:'jobs.roles_header')
+      %th
   %tbody
     - @jobs.each do |job|
-      %tr
+      %tr#job{id: job.id}
         %td= job.name
         %td= job.description
         %td= job.roles_available
+        %td
+          - if job.students.include?(current_student)
+            Interested
+          - else
+            = link_to t(:'jobs.apply_button'), job_apply_path(job), class: 'apply-button button', method: :post, remote: true
