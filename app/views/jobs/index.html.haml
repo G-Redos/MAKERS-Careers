@@ -1,0 +1,12 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Open Roles
+  %tbody
+    - @jobs.each do |job|
+      %tr
+        %td= job.name
+        %td= job.description
+        %td= job.roles_available
