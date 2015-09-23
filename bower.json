@@ -1,0 +1,21 @@
+{
+  "name": "careers",
+  "version": "0.0.0",
+  "homepage": "https://github.com/makersacademy/careers",
+  "authors": [
+    "Ben Forrest <ben@silvabox.com>"
+  ],
+  "description": "Makers Academy careers",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "makers_styles": "~2.3.6"
+  }
+}

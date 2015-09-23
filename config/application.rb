@@ -32,5 +32,6 @@ module Careers
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.x.github = config_for(:github)
+    config.x.cdn_url = 'http://assets.makersacademy.com'
   end
 end
