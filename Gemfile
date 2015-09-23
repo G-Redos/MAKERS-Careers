@@ -22,6 +22,7 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'puma'
 
 gem 'devise', '~> 3.4.0'
 gem 'omniauth-github'
@@ -53,20 +54,12 @@ group :development, :test do
   gem 'awesome_print'
   gem 'gist'
   gem 'ffaker'
-  gem 'thin'
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'webmock'
-  gem 'poltergeist'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'launchy'
-  gem 'database_cleaner'
 end
 
-group :production do
-  gem 'puma'
-end

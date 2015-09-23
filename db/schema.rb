@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922104941) do
+ActiveRecord::Schema.define(version: 20150921150541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(version: 20150922104941) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["uid", "provider"], name: "index_admins_on_uid_and_provider", using: :btree
   add_index "admins", ["uid"], name: "index_admins_on_uid", unique: true, using: :btree
-
-  create_table "job_applications", force: :cascade do |t|
-    t.integer  "job_id"
-    t.integer  "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "job_applications", ["job_id"], name: "index_job_applications_on_job_id", using: :btree
-  add_index "job_applications", ["student_id"], name: "index_job_applications_on_student_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "name"
@@ -82,6 +72,4 @@ ActiveRecord::Schema.define(version: 20150922104941) do
   add_index "students", ["uid", "provider"], name: "index_students_on_uid_and_provider", using: :btree
   add_index "students", ["uid"], name: "index_students_on_uid", unique: true, using: :btree
 
-  add_foreign_key "job_applications", "jobs"
-  add_foreign_key "job_applications", "students"
 end
