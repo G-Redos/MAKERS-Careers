@@ -1,18 +1,24 @@
-%table
-  %thead
-    %tr
-      %th= t(:'jobs.name_header')
-      %th= t(:'jobs.description_header')
-      %th= t(:'jobs.roles_header')
-      %th
-  %tbody
-    - @jobs.each do |job|
-      %tr#job{id: job.id}
-        %td= job.name
-        %td= job.description
-        %td= job.roles_available
-        %td
-          - if job.students.include?(current_student)
-            Interested
-          - else
-            = link_to t(:'jobs.apply_button'), job_apply_path(job), class: 'apply-button button', method: :post, remote: true
+%section.hero-splash(style="background-image: url(#{image_path("backgrounds/dan-and-students-overhead-70.jpg")});")
+  .container
+    .centered-row
+      %h1 Jobs
+%section
+  .container.align-left
+    %table
+      %thead
+        %tr
+          %th= t(:'jobs.name_header')
+          %th= t(:'jobs.description_header')
+          %th= t(:'jobs.roles_header')
+          %th
+      %tbody
+        - @jobs.each do |job|
+          %tr#job{id: job.id}
+            %td= job.name
+            %td= job.description
+            %td= job.roles_available
+            %td
+              - if job.students.include?(current_student)
+                Interested
+              - else
+                = link_to t(:'jobs.apply_button'), job_apply_path(job), class: 'apply-button button', method: :post, remote: true

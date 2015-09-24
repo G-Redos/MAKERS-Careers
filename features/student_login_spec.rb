@@ -60,7 +60,7 @@ RSpec.feature "Student Login" do
 
     scenario "I signout" do
       visit jobs_path
-      click_on I18n.t(:logout_button)
+      click_on I18n.t(:logout_button), match: :first
       expect(page).to have_content(I18n.t(:"devise.sessions.signed_out"))
     end
   end

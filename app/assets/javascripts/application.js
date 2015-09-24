@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require makers_styles/source/javascripts/vendor/retina.min
+//= require makers_styles/source/javascripts/vendor/slick.js
+//= require makers_styles/source/javascripts/navigation
+//= require makers_styles/source/javascripts/jquery.fixedscroll
+//= require makers_styles/source/javascripts/vendor/baseliner
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
