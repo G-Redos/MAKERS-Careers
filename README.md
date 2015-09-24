@@ -8,7 +8,7 @@ The location for students to finish jobs, written in Rails
 
 * Clone the repo
 * `bundle`
-* `bower_install`
+* `bower install`
 * `bin/rake db:setup`
 * `bin/rake db:seed`
 * Make sure you have a `.env` file setup - format documented in `.env.example`, shared details in LastPass shared notes
