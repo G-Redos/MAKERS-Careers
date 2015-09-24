@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs = Job.all_open
+    flash[:alert] = "Yo there! I see you're looking good!"
   end
 
   def apply

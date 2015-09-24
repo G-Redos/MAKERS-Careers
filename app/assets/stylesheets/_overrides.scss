@@ -1,0 +1,11 @@
+// All overrides (just for the careers application)
+
+// in this application, flash messages are in their own
+// container, so should be fixedly positioned (and must
+// avoid the floating navigation at all times)
+.panel--alert, .panel--success {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 87px;
+}
