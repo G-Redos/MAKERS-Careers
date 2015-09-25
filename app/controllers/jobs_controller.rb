@@ -6,7 +6,11 @@ class JobsController < ApplicationController
   def apply
     job = Job.find(params[:job_id])
     current_student.jobs << job
-    current_student.save!
-    render json: {text: I18n.t(:'jobs.student_interested')}
+    flash[:notice] = t(:'jobs.application_acknowledgement')
+    redirect_to jobs_path
+  end
+
+  def show
+    @job = Job.find(params[:id])
   end
 end

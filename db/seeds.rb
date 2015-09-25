@@ -1,10 +1,14 @@
+# We have to do this to get jobs starting from id 1 again
+Job.delete_all
+ActiveRecord::Base.connection.execute("TRUNCATE jobs RESTART IDENTITY CASCADE")
+
 def create_job(status)
   Job.create({
     status: status,
-    name: FFaker::Job.title,
-    description: FFaker::Company.catch_phrase,
-    roles_available: rand(15),
-    company: FFaker::Company.name
+    company: FFaker::Company.name,
+    specification: FFaker::HipsterIpsum.paragraph,
+    summary: FFaker::Company.catch_phrase,
+    roles_available: rand(15)
   })
 end
 
