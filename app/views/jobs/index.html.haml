@@ -7,18 +7,14 @@
     %table
       %thead
         %tr
-          %th= t(:'jobs.name_header')
-          %th= t(:'jobs.description_header')
+          %th= t(:'jobs.company_header')
+          %th= t(:'jobs.summary_header')
           %th= t(:'jobs.roles_header')
           %th
       %tbody
         - @jobs.each do |job|
           %tr#job{id: job.id}
-            %td= job.name
-            %td= job.description
+            %td= job.company
+            %td= job.summary
             %td= job.roles_available
-            %td
-              - if job.students.include?(current_student)
-                Interested
-              - else
-                = link_to t(:'jobs.apply_button'), job_apply_path(job), class: 'apply-button button', method: :post, remote: true
+            %td= link_to t(:'jobs.read_specification'), job_path(job), class: 'button'

@@ -4,40 +4,36 @@ RSpec.feature 'Students can register interest in jobs' do
 
   let!(:student) { login_as_student }
 
-  let!(:job_1) { FactoryGirl.create(:open_job, name: 'Job 1') }
-  let!(:job_2) { FactoryGirl.create(:open_job, name: 'Job 2') }
+  let!(:job_1) { FactoryGirl.create(:open_job, company: 'Job 1') }
+  let!(:job_2) { FactoryGirl.create(:open_job, company: 'Job 2') }
 
-  scenario 'they can click on the apply button to register for a job', js: true do
-    visit '/jobs'
-    within_each_job do
-      click_on 'Apply'
-      expect(page).to have_content t(:'jobs.student_interested')
-    end
+  scenario 'they can click on the apply button to register for a job' do
+    click_on_job
+    click_on t(:'jobs.apply_button')
+    expect(page).to have_content t(:'jobs.application_acknowledgement')
   end
 
-  scenario 'they can see the jobs they have already registered interest for' do
+  scenario 'they cannot apply for the same job twice' do
     relate_jobs_to_student
-    visit '/jobs'
-    within_each_job do
-      expect(page).to have_content t(:'jobs.student_interested')
-    end
+    click_on_job
+    expect(page).not_to have_content t(:'jobs.apply_button')
   end
 
   def jobs
     [job_1, job_2]
   end
 
+  def click_on_job
+    visit '/jobs'
+    within("#job_#{job_1.id}") do
+      click_on t(:'jobs.read_specification')
+    end
+
+  end
+
   def relate_jobs_to_student
     jobs.each do |job|
       student.jobs << job
-    end
-  end
-
-  def within_each_job
-    jobs.each do |job|
-      within("#job_#{job.id}") do
-        yield
-      end
     end
   end
 end

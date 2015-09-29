@@ -35,6 +35,8 @@ gem 'rails_12factor'
 
 gem 'dotenv'
 
+gem 'redcarpet'
+
 group :development, :test do
   gem 'pry'
 

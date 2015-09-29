@@ -1,25 +1,24 @@
 FactoryGirl.define do
   factory :job do
-    name 'Job'
-    company 'makers'
+    company FFaker::Company.name
+    summary FFaker::Company.catch_phrase
+    specification "#Some *markdown*"
     status 'open'
-    description 'An awesome job at makers'
     roles_available 5
 
     factory :open_job do
-      name 'Open Job'
+      company 'Open Job'
       status 'open'
     end
 
     factory :closed_job do
-      name 'Closed Job'
+      company 'Closed Job'
       status 'closed'
     end
 
     factory :draft_job do
-      name 'Draft Job'
+      company 'Draft Job'
       status 'draft'
     end
   end
-
 end
