@@ -6,6 +6,6 @@ RSpec.describe Job, type: :model do
       .with([:open, :draft, :closed])
   end
 
-  it { is_expected.to have_many(:students).through(:job_applications) }
-  it { is_expected.to have_many(:job_applications) }
+  it { is_expected.to have_many(:students).through(:job_interests) }
+  it { is_expected.to have_many(:job_interests) }
 end
