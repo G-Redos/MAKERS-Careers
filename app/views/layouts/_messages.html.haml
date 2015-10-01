@@ -1,4 +1,6 @@
-- flash.each do |name, msg|
-  %div(data-alert){class: name.to_s == 'notice' ? 'success' : 'alert'}
-    = msg
-    %a.close(href="#") ×
+%section.no-min-height.no-padding
+  .container
+    - flash.each do |name, msg|
+      %div.panel(data-alert){class: name.to_s == 'notice' ? 'panel--success' : 'panel--alert'}
+        %p= msg
+        %a.close(href="#") ×
