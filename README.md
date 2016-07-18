@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/makersacademy/careers.png?label=ready&title=Ready)](https://waffle.io/makersacademy/careers)
 # Careers Site for Makers Academy
 
 [ ![Codeship Status for makersacademy/careers](https://codeship.com/projects/d0e1d050-3d17-0133-c9b5-22d459b325ce/status?branch=master)](https://codeship.com/projects/102380)
