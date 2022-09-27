@@ -2,7 +2,7 @@
 
 ## The Week After Graduation: CAREERS BOOTCAMP
 
-Hello Maker and soon to be Makers Graduates 👋
+Hello Maker and soon to be Maker Graduate 👋
 
 We can't wait to meet you and work with you on the job-hunt which in its own way is another growth journey all of its own. Strap in! We know it can be a challenging time and for that reason there's lots of staff ready to support you. The time and energy you'll put into it is worth it and in a year you'll look back and be incredibly proud that you've taken this leap. We also know that you probably won't believe this career change is possible until you receive that offer.
 
