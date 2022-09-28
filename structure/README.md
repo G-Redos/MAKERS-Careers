@@ -4,7 +4,7 @@ Hello Maker and soon to be Maker Graduate 👋
 
 We can't wait to meet you and work with you on the job-hunt which in its own way is another growth journey all of its own. Strap in! We know it can be a challenging time and for that reason there's lots of staff ready to support you. The time and energy you'll put into it is worth it and in a year you'll look back and be incredibly proud that you've taken this leap. We also know that you probably won't believe this career change is possible until you receive that offer.
 
-Here's a breakdown of the support we provide and the ways you can connect with us. We know you're each individuals and we try to adapt what we do for each of you so please dont' hesitate to ask for what you need if you can't find it here. 
+Here's a breakdown of the support we provide and the ways you can connect with us. You're unique individuals and we try to adapt what we do for each of you. Please don't hesitate to ask for what you need if you can't find it here. 
 
 The week after you graduate we run a whole week of workshops designed to teach you the skills you need to find your first tech job.
 
@@ -38,7 +38,7 @@ We meet every weekday at 5 PM for 30 minutes to retro our day. Anyone can join s
 
 ## ONGOING WORKSHOPS
 
-Our technical and job-hunting workshops are under construction at the moment as we create new content. There is recorded content you can watch in two slack channels which will be new to you. We'll probably let you know about new workshops there, too. You're not missing out on workshops btw, the existing ones are now all in the Careers Bootcamp.
+Our technical and job-hunting workshops are under construction at the moment as we create new content. There is recorded content you can watch in two slack channels which will be new to you. We'll let you know about new workshops there, too. You're not missing out on workshops btw, the existing ones are now all in the Careers Bootcamp.
 
 #### jh_consolidators 
 Join this slack channel to view recorded technical workshops and find out about new workshops coming.
