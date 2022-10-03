@@ -15,6 +15,8 @@ The week after you graduate we run a whole week of workshops designed to teach y
 All these workshops are subject to change of dates and time, always unavoidably. This schedule is an idea of what you can expect. 
 The dates of the workshops for your cohort will be displayed in your cohort calendar.
 
+The workshops might run into week two if we have to but will all be recorded. We run this series each month and so if you miss one (or all) then you will be welcome to join with the next cohort.
+
 | DAY                            | WORKSHOPS                                   |
 | ------------------------------ | -----------------------------------------   |
 | MONDAY                         | 🧘 __FREE TIME / NO WORKSHOPS PLANNED__  🧘  |
