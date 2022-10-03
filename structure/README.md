@@ -17,6 +17,8 @@ The dates of the workshops for your cohort will be displayed in your cohort cale
 
 The workshops might run into week two if we have to but will all be recorded. We run this series each month and so if you miss one (or all) then you will be welcome to join with the next cohort.
 
+We run everything __remotely__.
+
 | DAY                            | WORKSHOPS                                   |
 | ------------------------------ | -----------------------------------------   |
 | MONDAY                         | 🧘 __FREE TIME / NO WORKSHOPS PLANNED__  🧘  |
