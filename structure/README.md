@@ -12,6 +12,9 @@ The week after you graduate we run a whole week of workshops designed to teach y
 
 ## The Week After Graduation: CAREERS BOOTCAMP
 
+All these workshops are subject to change of dates and time, always unavoidably. This schedule is an idea of what you can expect. 
+The dates of the workshops for your cohort will be displayed in your cohort calendar.
+
 | DAY                            | WORKSHOPS                                   |
 | ------------------------------ | -----------------------------------------   |
 | MONDAY                         | 🧘 __FREE TIME / NO WORKSHOPS PLANNED__  🧘  |
